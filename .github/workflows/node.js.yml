@@ -25,5 +25,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Set up MySQL connection
+      run: echo "::set-env name=DB_HOST::localhost && echo "::set-env name=DB_USER::root && echo "::set-env name=DB_PASSWORD:: && echo "::set-env name=DB_DATABASE::fullface_shop"
+
     - name: Run tests
       run: npx jest
